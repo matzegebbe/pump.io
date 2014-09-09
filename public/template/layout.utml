@@ -147,6 +147,7 @@
           disableRegistration: <%- config.disableRegistration || false %>,
           canUpload: <%- config.canUpload || false %>,
           debugClient: <%- config.debugClient || false %>,
+          bridgeuser: "<%- config.bridgeuser %>",
           sockjs: <%- config.sockjs || false %>
       });
 

@@ -12,6 +12,11 @@
     </button>
     <% } %>
   </div>
+  <div class="btn-group" data-toggle="buttons-checkbox">
+    <button type="button" class="btn btn-small primary" id="filter-button" title="Filter pumpbridge">
+      <span class="hidden-phone">Filter </span><i class="icon-filter"></i>
+    </button>
+  </div>
 
   <ul class="nav pull-right">
     <li id="fat-menu" class="dropdown">

@@ -554,7 +554,8 @@
         events: {
             "click #logout": "logout",
             "click #post-note-button": "postNoteModal",
-            "click #post-picture-button": "postPictureModal"
+            "click #post-picture-button": "postPictureModal",
+            "click #filter-button": "switchFilter"
         },
         postNoteModal: function() {
             var view = this;
@@ -563,6 +564,23 @@
         postPictureModal: function() {
             var view = this;
             view.showPostingModal('#post-picture-button', Pump.PostPictureModal);
+        },
+        switchFilter: function() {
+            var view = this;
+            if(Pump.config.pumpbridgefilter) Pump.config.pumpbridgefilter = false;
+             else Pump.config.pumpbridgefilter = true;
+ 
+                    if (Pump.config.sockjs) {
+                        // Request a new challenge
+                        Pump.setupSocket();
+                    }
+                    if (window.location.pathname == "/") {
+                        // If already home, reload to show main page
+                        Pump.router.home(true);
+                    } else {
+                        // Go home
+                        Pump.router.navigate("/", true);
+                    }
         },
         showPostingModal: function(btn, Cls) {
             var view = this,
