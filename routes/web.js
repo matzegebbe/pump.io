@@ -314,7 +314,7 @@ var showActivity = function(req, res, next) {
 
     var activity = req.activity;
 
-    if(typeof activity != "undefined") {
+    if(typeof activity != "undefined" && typeof req.originalUrl != "undefined" && principal != "undefined" && activity != "undefined") {
       if (activity.isMajor()) {
           res.render("major-activity-page", {page: {title: activity.content, url: req.originalUrl},
                                              principal: principal,
